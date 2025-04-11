@@ -129,14 +129,12 @@ fun OutlookExample() {
         navigationRail = {
             DesktopNavigationRail(
                 header = {
-                    // App logo or hamburger menu
                     IconButton(onClick = { /* Menu action */ }) {
                         Icon(Icons.Default.Add, contentDescription = "Menu")
                     }
                     Spacer(modifier = Modifier.height(16.dp))
                 },
                 content = {
-                    // Navigation items
                     NavRailItem(
                         icon = Icons.Default.Email,
                         isSelected = selectedNavItem == 0,
@@ -173,7 +171,6 @@ fun OutlookExample() {
         // Main content implementation
         content = {
             val navigationPanelState = rememberNavigationPanelState(initialExpanded = true)
-            // Animate the rotation of the toggle icon
             val rotation by animateFloatAsState(
                 targetValue = if (navigationPanelState.isExpanded) 0f else 180f,
                 animationSpec = tween(durationMillis = 300),

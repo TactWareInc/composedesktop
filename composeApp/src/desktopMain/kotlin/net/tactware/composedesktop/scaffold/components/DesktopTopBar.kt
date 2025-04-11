@@ -32,28 +32,13 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun DesktopTopBar(
-    // Title or branding element
     title: @Composable () -> Unit = {},
-
-    // Search component
     search: @Composable RowScope.() -> Unit = {},
-
-    // Actions on the right side
     actions: @Composable RowScope.() -> Unit = {},
-
-    // Background color
     backgroundColor: Color = MaterialTheme.colorScheme.surface,
-
-    // Content color
     contentColor: Color = contentColorFor(backgroundColor),
-
-    // Elevation
     elevation: Dp = 4.dp,
-
-    // Height of the top bar
     height: Dp = 48.dp,
-
-    // Modifier
     modifier: Modifier = Modifier
 ) {
     Surface(
