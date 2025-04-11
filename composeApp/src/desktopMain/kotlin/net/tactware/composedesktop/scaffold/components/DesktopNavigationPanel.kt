@@ -42,10 +42,7 @@ import net.tactware.composedesktop.scaffold.state.PanelState
  * @param modifier Modifier for the panel
  */
 @Composable
-fun DesktopNavigationPanel(
-    // Panel state
-    state: NavigationPanelState,
-
+fun DesktopPanel(
     // Header content
     header: @Composable () -> Unit = {},
 

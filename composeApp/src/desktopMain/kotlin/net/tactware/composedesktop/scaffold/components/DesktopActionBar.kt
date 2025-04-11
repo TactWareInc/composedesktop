@@ -33,25 +33,13 @@ import androidx.compose.ui.unit.dp
 @Composable
 fun DesktopActionBar(
     expansionAction : @Composable () -> Unit = {},
-
     primaryAction: @Composable () -> Unit = {},
-
-    // Other actions
     actions: @Composable RowScope.() -> Unit = {},
-
-    // Background color
+    footer: @Composable () -> Unit = {},
     backgroundColor: Color = MaterialTheme.colorScheme.surface,
-
-    // Content color
     contentColor: Color = contentColorFor(backgroundColor),
-
-    // Height of the action bar
     height: Dp = 56.dp,
-
-    // Elevation of the action bar
     elevation: Dp = 2.dp,
-
-    // Modifier
     modifier: Modifier = Modifier
 ) {
     Surface(
@@ -71,10 +59,13 @@ fun DesktopActionBar(
 
             // Other actions section
             Row(
-                modifier = Modifier.horizontalScroll(rememberScrollState()).padding(start = 8.dp),
+                modifier = Modifier.horizontalScroll(rememberScrollState()).weight(1f).padding(start = 8.dp),
                 verticalAlignment = Alignment.CenterVertically,
                 content = actions
             )
+
+            // Footer section
+            footer()
         }
     }
 }

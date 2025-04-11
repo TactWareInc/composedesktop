@@ -173,7 +173,9 @@ fun DesktopFilledTextField(
             .background(backgroundColor, shape),
         enabled = enabled,
         readOnly = readOnly,
-        textStyle = textStyle,
+        textStyle = textStyle.copy(
+            color = if (isError) MaterialTheme.colorScheme.error else LocalContentColor.current
+        ),
         keyboardOptions = keyboardOptions,
         keyboardActions = keyboardActions,
         singleLine = singleLine,

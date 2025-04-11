@@ -1,5 +1,6 @@
 package net.tactware.composedesktop.scaffold.components
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -35,7 +36,7 @@ fun DesktopTopBar(
     title: @Composable () -> Unit = {},
 
     // Search component
-    search: @Composable () -> Unit = {},
+    search: @Composable RowScope.() -> Unit = {},
 
     // Actions on the right side
     actions: @Composable RowScope.() -> Unit = {},
@@ -72,6 +73,7 @@ fun DesktopTopBar(
             Row(
                 verticalAlignment = Alignment.CenterVertically,
                 modifier = Modifier.weight(1f),
+                horizontalArrangement = Arrangement.End,
                 content = { search() }
             )
 

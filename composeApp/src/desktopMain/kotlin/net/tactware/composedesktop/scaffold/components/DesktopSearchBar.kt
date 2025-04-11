@@ -1,5 +1,6 @@
 package net.tactware.composedesktop.scaffold.components
 
+import androidx.compose.foundation.Indication
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -19,6 +20,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -151,7 +153,7 @@ fun DesktopSearchBar(
 
                     Box(
                         modifier = Modifier
-                            .weight(1f).align(Alignment.Top).padding(top = 4.dp)
+                            .weight(1f).align(Alignment.Top).padding(top = 6.dp)
                     ) {
                         if (query.isEmpty() && placeholder != null) {
                             placeholder()
@@ -168,7 +170,7 @@ fun DesktopSearchBar(
                     if (active) {
                         Popup(popupPositionProvider = TooltipDefaults.rememberRichTooltipPositionProvider(), onDismissRequest =
                         { onActiveChange(false) }) {
-                            Card {
+                            Card(elevation = CardDefaults.elevatedCardElevation(defaultElevation = 16.dp)) {
                                 resultsContent()
                             }
                         }
@@ -200,8 +202,6 @@ fun SearchResultItem(
         modifier = modifier
             .fillMaxWidth()
             .clickable(
-                interactionSource = remember { MutableInteractionSource() },
-                indication = null,
                 onClick = onClick
             ),
         color = Color.Transparent
