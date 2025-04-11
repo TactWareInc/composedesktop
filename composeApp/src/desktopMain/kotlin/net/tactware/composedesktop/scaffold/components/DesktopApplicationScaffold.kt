@@ -1,22 +1,12 @@
 package net.tactware.composedesktop.scaffold.components
 
-import androidx.compose.animation.core.animateDpAsState
-import androidx.compose.animation.core.tween
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import net.tactware.composedesktop.scaffold.state.NavigationPanelState
-import net.tactware.composedesktop.scaffold.state.PanelState
-import net.tactware.composedesktop.scaffold.state.rememberNavigationPanelState
 
 /**
  * A desktop-oriented scaffold that implements the slot pattern similar to Material 3's Scaffold
@@ -24,10 +14,7 @@ import net.tactware.composedesktop.scaffold.state.rememberNavigationPanelState
  *
  * @param topBar Slot for the top bar containing search and global actions
  * @param navigationRail Slot for the navigation rail on the far left
- * @param navigationPanel Slot for the expandable navigation panel
- * @param actionBar Slot for the action bar containing context-specific actions
  * @param content Slot for the main content area
- * @param navigationPanelState State controller for the navigation panel
  * @param modifier Modifier for the entire scaffold
  */
 @Composable

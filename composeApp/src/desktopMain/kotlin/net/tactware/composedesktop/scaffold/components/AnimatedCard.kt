@@ -57,22 +57,6 @@ fun AnimatedCard(
         }
     }
 
-
-//    // Coordinate sequential animations using a coroutine
-//    LaunchedEffect(expanded) {
-//        if (expanded) {
-//            cardExpanded = true
-//            delay(expansionDuration.toLong())
-//            // Now fade in content
-//            contentVisible = true
-//        } else {
-//            // Fade out content before shrinking
-//            contentVisible = false
-//            delay(contentFadeDuration.toLong() +expansionDuration.toLong())
-//            cardExpanded = false
-//        }
-//    }
-
     // Outer AnimatedVisibility for the card itself
     AnimatedVisibility(
         // Keep the card visible if expanded *or* we're in the middle of fading out its content

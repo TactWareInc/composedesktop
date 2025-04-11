@@ -43,22 +43,11 @@ import net.tactware.composedesktop.scaffold.state.PanelState
  */
 @Composable
 fun DesktopPanel(
-    // Header content
     header: @Composable () -> Unit = {},
-
-    // Content
     content: @Composable ColumnScope.() -> Unit,
-
-    // Footer content
     footer: @Composable ColumnScope.() -> Unit = {},
-
-    // Background color
     backgroundColor: Color = MaterialTheme.colorScheme.surface,
-
-    // Content color
     contentColor: Color = contentColorFor(backgroundColor),
-
-    // Modifier
     modifier: Modifier = Modifier
 ) {
 

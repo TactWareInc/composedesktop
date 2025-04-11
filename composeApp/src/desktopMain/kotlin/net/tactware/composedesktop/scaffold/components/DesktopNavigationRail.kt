@@ -30,25 +30,12 @@ import androidx.compose.ui.unit.dp
  */
 @Composable
 fun DesktopNavigationRail(
-    // Header content at the top
     header: @Composable () -> Unit = {},
-
-    // Footer content at the bottom
     footer: @Composable () -> Unit = {},
-
-    // Content in the middle (navigation items)
     content: @Composable ColumnScope.() -> Unit,
-
-    // Background color
     backgroundColor: Color = MaterialTheme.colorScheme.surface,
-
-    // Content color
     contentColor: Color = contentColorFor(backgroundColor),
-
-    // Width of the rail
     width: Dp = 56.dp,
-
-    // Modifier
     modifier: Modifier = Modifier
 ) {
     Surface(
