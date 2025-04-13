@@ -38,6 +38,7 @@ import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -58,6 +59,7 @@ import net.tactware.composedesktop.scaffold.components.DesktopAreaScaffold
 import net.tactware.composedesktop.scaffold.components.DesktopNavigationRail
 import net.tactware.composedesktop.scaffold.components.DesktopPanel
 import net.tactware.composedesktop.scaffold.components.DesktopSearchBar
+import net.tactware.composedesktop.scaffold.components.DesktopTextField
 import net.tactware.composedesktop.scaffold.components.DesktopTopBar
 import net.tactware.composedesktop.scaffold.components.SearchResultItem
 import net.tactware.composedesktop.scaffold.state.rememberNavigationPanelState
@@ -242,7 +244,7 @@ fun OutlookExample() {
                     )
                 },
                 // Navigation panel implementation
-                navigationPanel = { panelState ->
+                navigationPanel = {
                     DesktopPanel(
                         header = {
                             // Account information
@@ -301,6 +303,9 @@ fun OutlookExample() {
                                 style = MaterialTheme.typography.bodyMedium,
                                 modifier = Modifier.padding(16.dp)
                             )
+
+                            DesktopTextField("Text",{}, modifier = Modifier.padding(8.dp))
+                            OutlinedTextField("Text", {}, modifier = Modifier.padding(8.dp))
                         },
                         backgroundColor = MaterialTheme.colorScheme.surfaceVariant,
                         contentColor = MaterialTheme.colorScheme.onSurfaceVariant,
