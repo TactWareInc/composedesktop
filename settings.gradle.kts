@@ -28,4 +28,4 @@ dependencyResolutionManagement {
     }
 }
 
-include(":compose-desktop-scaffold")
+include(":compose-desktop-scaffold", ":example")
