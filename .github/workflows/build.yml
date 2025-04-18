@@ -1,0 +1,29 @@
+name: Build Kotlin Desktop App
+
+on:
+  push:
+    branches: [ main, root, feature/*, release/* ]
+  pull_request:
+    branches: [ main, root, feature/*, bugfix/*, task/*, release/* ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: Build with Gradle
+        run: ./gradlew build
+
+      - name: Run tests
+        run: ./gradlew test
+
+
